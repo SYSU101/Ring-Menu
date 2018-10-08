@@ -1,0 +1,288 @@
+@keyframes jump {
+  30% {
+    transform: translate(-50%, -20px);
+  }
+  60% {
+    transform: translate(-50%, 0);
+  }
+  100% {
+    width: 75px;
+    height: 75px;
+  }
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#at-plus-container {
+  position: absolute;
+  height: 100%;
+  left: 50%;
+  width: 400px;
+  overflow: hidden;
+  transform: translateX(-50%);
+}
+
+#bottom-positioner {
+  position: absolute;
+  bottom: 120px;
+  width: 100%;
+  height: 200px;
+}
+
+#button {
+  position: absolute;
+  border: none;
+  outline: none;
+  background: grey;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+}
+
+#button:hover {
+  animation-name: jump;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+#button>* {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 1s ease, opacity 0.5s ease;
+}
+
+#button:hover>* {
+  pointer-events: all;
+  opacity: 1;
+}
+
+#button>#info-bar {
+  width: 120px;
+  height: 120px;
+  left: 50%;
+  background-color: grey;
+  transform: translate(-50%);
+}
+
+#button:hover>#info-bar {
+  transform: translate(-50%, calc(-100% - 10px));
+}
+
+#button>*:last-child {
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  background-color: rgba(48, 63, 159, 0);
+}
+
+#button:hover>*:last-child {
+  background-color: rgba(48, 63, 159, 1);
+}
+
+#button>*:last-child::before {
+  content: "";
+  width: 66%;
+  height: 50%;
+  position: absolute;
+  top: 25%;
+  left: 17%;
+  background-image: url('./assets/images/atplus_white.png');
+  background-size: 100% 100%;
+}
+
+#button:hover>*:last-child::before {
+  background-image: url('./assets/images/atplus_green.png');
+}
+
+#button ul {
+  list-style: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+#button ul>li {
+  display: inline-block;
+  position: absolute;
+  color: white;
+  font-family: monospace;
+}
+
+#button .info li>span::before {
+  content: "";
+  display: inline-block;
+  height: 20px;
+  width: 0.2em;
+}
+
+#button .page.user {
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 20px;
+}
+
+#button .page.user>span, #button .mine>span {
+  display: inline-block;
+  transform: translateY(-3px);
+}
+
+#button .page.comment {
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 35px;
+}
+
+#button .page.comment>img {
+  width: 25px;
+  height: 25px;
+}
+
+#button .page.comment>span {
+  display: inline-block;
+  transform: translateY(-5px);
+}
+
+#button .mine {
+  bottom: 10px;
+  font-size: 20px;
+}
+
+#button .mine.posted {
+  left: 20px;
+}
+
+#button .mine.like {
+  right: 18px;
+}
+
+#button #control-ring-container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+#button #control-ring {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+#button .button {
+  border-radius: 50%;
+  background-color: grey;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  left: calc(50% - 20px);
+  top: calc(50% - 20px);
+  transition: transform 0.5s ease;
+}
+
+#button:hover .mask {
+  transform: translate(-77.94228634059948px, -45px);
+}
+
+#button .mask::before {
+  content: "";
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-image: url('./assets/images/mask.png');
+}
+
+#button:hover .history {
+  transform: translate(-90px, 0);
+}
+
+#button .history::before {
+  content: "";
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-image: url('./assets/images/history.png');
+}
+
+#button:hover .message {
+  transform: translate(-77.94228634059948px, 45px);
+}
+
+#button .message::before {
+  content: "";
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-image: url('./assets/images/message.png');
+}
+
+#button:hover .setting {
+  transform: translate(-45px, 77.94228634059948px);
+}
+
+#button .setting::before {
+  content: "";
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-image: url('./assets/images/setting.png');
+}
+
+#button:hover .sign {
+  transform: translate(0, 90px);
+}
+
+#button .sign::before {
+  content: "";
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-image: url('./assets/images/signin.png');
+}
+
+#button .unread {
+  display: inline-block;
+  width: 14px;
+  height: 20px;
+  font-size: 15px;
+  right: -5px;
+  top: -5px;
+  position: absolute;
+  background-color: red;
+  border-radius: 50%;
+  padding-left: 6px;
+  line-height: 150%;
+}

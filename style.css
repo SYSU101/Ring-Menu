@@ -75,6 +75,10 @@ html, body {
   transform: translate(-50%);
 }
 
+#button>#info-bar .mine {
+  color: #079E6E;
+}
+
 #button:hover>#info-bar {
   transform: translate(-50%, calc(-100% - 10px));
 }
